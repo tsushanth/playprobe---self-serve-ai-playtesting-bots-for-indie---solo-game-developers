@@ -1,0 +1,22 @@
+{
+  "name": "Nightly Build - Night 1",
+  "start": "start",
+  "nodes": {
+    "start": {"type": "normal"},
+    "forest": {"type": "normal"},
+    "swamp": {"type": "normal"},
+    "cave": {"type": "normal"},
+    "treasure_nook": {"type": "normal"},
+    "boss_room": {"type": "normal"},
+    "victory": {"type": "win"}
+  },
+  "edges": [
+    {"from": "start", "to": "forest", "action": "head_out", "stat_deltas": {}},
+    {"from": "forest", "to": "swamp", "action": "wander_west", "stat_deltas": {}},
+    {"from": "forest", "to": "cave", "action": "enter_cave", "stat_deltas": {"hp": -5}},
+    {"from": "cave", "to": "treasure_nook", "action": "search_corner", "stat_deltas": {"hp": -3}},
+    {"from": "treasure_nook", "to": "boss_room", "action": "continue_on", "stat_deltas": {"hp": -6}},
+    {"from": "cave", "to": "boss_room", "action": "descend", "stat_deltas": {"hp": -60}},
+    {"from": "boss_room", "to": "victory", "action": "defeat_boss", "stat_deltas": {"hp": -8}}
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "name": "tiny fixture",
+  "start": "a",
+  "nodes": {
+    "a": {"type": "normal"},
+    "b": {"type": "normal"},
+    "c": {"type": "normal"},
+    "d": {"type": "error"}
+  },
+  "edges": [
+    {"from": "a", "to": "b", "action": "go_b", "stat_deltas": {"score": 1}},
+    {"from": "b", "to": "a", "action": "go_a", "stat_deltas": {"score": 5}},
+    {"from": "a", "to": "c", "action": "go_c", "stat_deltas": {"score": 2}},
+    {"from": "a", "to": "d", "action": "go_d", "stat_deltas": {"score": 100}}
+  ]
+}
